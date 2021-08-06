@@ -1,0 +1,30 @@
+.pokemonContainer {
+  outline: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 200ms ease-out;
+}
+
+.pokemonContainer:hover {
+  transform: scale(1.2);
+}
+
+.pokemonContainer:hover .pokemonName {
+  text-decoration: underline;
+}
+
+.pokemonImg {
+  width: 100%;
+  margin: 0 auto;
+  outline: 2px solid black;
+}
+
+.pokemonName {
+  text-transform: capitalize;
+  font-size: 0.85rem;
+  letter-spacing: 0.75px;
+  font-weight: 600;
+}

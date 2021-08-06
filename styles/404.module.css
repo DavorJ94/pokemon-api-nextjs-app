@@ -1,0 +1,21 @@
+.notFound {
+  margin: 2em auto;
+  text-align: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.headLine {
+  font-size: 3em;
+}
+
+.link {
+  font-weight: bold;
+  text-decoration: underline;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.link:hover {
+  color: goldenrod;
+}
