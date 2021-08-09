@@ -28,7 +28,51 @@ export const getStaticProps = async (context) => {
 };
 
 const AboutPokemon = ({ pokemon }) => {
-  return <div>{pokemon.name}</div>;
+  return (
+    <div key={pokemon.id} style={{ textAlign: "center" }}>
+      <div>{pokemon.name}</div>
+      <div>Abilities: </div>
+      {pokemon.abilities.map((ability, index) => {
+        if (index < pokemon.abilities.length - 1)
+          return <span key={`ability-${index}`}>{ability.ability.name}, </span>;
+        else
+          return <span key={`ability-${index}`}>{ability.ability.name}. </span>;
+      })}
+      <div>Height: {pokemon.height}</div>
+      <div>
+        {pokemon.moves.length >= 10
+          ? "First 10 moves: "
+          : `Its ${pokemon.moves.length} moves: `}
+        {pokemon.moves.map((move, index) => {
+          if (index < pokemon.moves.length - 1)
+            return <span key={`move-${index}`}>{move.move.name}, </span>;
+          else if (index === 9 || index === pokemon.moves.length - 1)
+            return <span key={`move-${index}`}>{move.move.name}. </span>;
+          else return;
+        })}
+      </div>
+      <img alt="Pokemon img" src={pokemon.sprites.front_shiny}></img>
+      <div>
+        Status:
+        {pokemon.stats.map((status, index) => {
+          return (
+            <div key={`stats-${index}`}>
+              {status.stat.name}: <span> {status.base_stat}</span>
+            </div>
+          );
+        })}
+      </div>
+      <div>
+        Types:
+        {pokemon.types.map((type, index) => {
+          if (index < pokemon.types.length - 1)
+            return <span key={`types-${index}`}> {type.type.name},</span>;
+          else return <span key={`types-${index}`}> {type.type.name}.</span>;
+        })}
+      </div>
+      <div>Weight: {pokemon.weight}</div>
+    </div>
+  );
 };
 
 export default AboutPokemon;
