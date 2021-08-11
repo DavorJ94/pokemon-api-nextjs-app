@@ -1,0 +1,25 @@
+.pokemonName {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.pokemonImg {
+  outline: 2px solid black;
+}
+
+.leftSide {
+  display: inline;
+  font-weight: bold;
+}
+
+.heightWeight {
+  font-weight: bold;
+}
+
+.abilities {
+  display: inline;
+  text-transform: capitalize;
+  font-weight: 400;
+  font-style: italic;
+}
