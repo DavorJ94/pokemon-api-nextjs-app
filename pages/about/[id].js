@@ -1,4 +1,5 @@
 import styles from "../../styles/id.module.css";
+import Image from "next/image";
 
 export const getStaticPaths = async () => {
   const response = await fetch(
@@ -32,11 +33,13 @@ export const getStaticProps = async (context) => {
 const AboutPokemon = ({ pokemon }) => {
   return (
     <div key={pokemon.id} style={{ textAlign: "center" }}>
-      <img
+      <Image
+        width={96}
+        height={96}
         alt="Pokemon img"
         src={pokemon.sprites.front_shiny}
         className={styles.pokemonImg}
-      ></img>
+      ></Image>
       <div className={styles.pokemonName}>{pokemon.name}</div>
       <div className={styles.leftSide}>Abilities: </div>
       {pokemon.abilities.map((ability, index) => {
